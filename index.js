@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const epub = require('epub-press-js');
+const EpubPress = require('epub-press-js');
 
 try {
 	const url = core.getInput('url'); //kk
@@ -8,7 +8,7 @@ try {
 	// Get the JSON webhook payload for the event that triggered the workflow
 	const payload = JSON.stringify(github.context.payload, undefined, 2);
 	console.log(`The event payload: ${payload}`);
-	const ebook = new epub.EpubPress({
+	const ebook = new EpubPress({
 		title: title,
 		description: 'eBook-friendly version',
 		urls: [url]
