@@ -1,14 +1,14 @@
-import { getInput, setOutput, setFailed } from '@actions/core';
-import { context } from '@actions/github';
-import { EpubPress } from 'epub-press-js@0.5.3';
+const core = require('@actions/core');
+const github = require('@actions/github');
+const epub = require('epub-press-js@0.5.3');
 
 try {
-	const url = getInput('url'); //kk
-	const title = getInput('title'); //kk
+	const url = core.getInput('url'); //kk
+	const title = core.getInput('title'); //kk
 	// Get the JSON webhook payload for the event that triggered the workflow
-	const payload = JSON.stringify(context.payload, undefined, 2);
+	const payload = JSON.stringify(github.context.payload, undefined, 2);
 	console.log(`The event payload: ${payload}`);
-	const ebook = new EpubPress({
+	const ebook = new epub.EpubPress({
 		title: title,
 		description: 'eBook-friendly version',
 		urls: [url]
@@ -18,12 +18,12 @@ try {
 			ebook.download();
 		}).
 		then(() => {
-			setOutput("id", ebook.getId());
+			core.setOutput("id", ebook.getId());
 		})
 		.catch(error => {
-			setFailed(error);
+			core.setFailed(error);
 		}
 	);
 } catch (error) {
-	setFailed(error.message);
+	core.setFailed(error.message);
 }
