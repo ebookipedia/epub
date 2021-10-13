@@ -1,13 +1,15 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'html2epub'
+description: 'Generates an epub file for the HTML content of an URL'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  url:
+    description: 'URL of the Wikipedia article to be epub converted'
     required: true
-    default: 'World'
+  title:  # id of input
+    description: 'Title of the Wikipedia article (it will be the title of the ebook)'
+    required: true
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  feedback:
+    description: 'Text indicating if the epub was correctly downloaded (ok) or not (error description)'
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'index.js'

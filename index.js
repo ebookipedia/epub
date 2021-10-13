@@ -1,20 +1,30 @@
 import { getInput, setOutput, setFailed } from '@actions/core';
 import { context } from '@actions/github';
+import { EpubPress } from 'epub-press-js@0.5.3';
 
 try {
-	const nameToGreet = getInput('who-to-greet'); //kk
-	console.log(`Hello ${nameToGreet}!`);
-	const time = (new Date()).toTimeString();
-	setOutput("time", time);
+	const url = getInput('url'); //kk
+	const title = getInput('title'); //kk
 	// Get the JSON webhook payload for the event that triggered the workflow
 	const payload = JSON.stringify(context.payload, undefined, 2);
 	console.log(`The event payload: ${payload}`);
 	const ebook = new EpubPress({
-		title: 'Abiogenesis',
-		description: 'eBook-friendly mirror of the Wikipedia article',
+		title: title,
+		description: 'eBook-friendly version',
 		urls: [
-			'http://es.wikipedia.org/Abiogenesis'
+			url
 		]
+	});
+	ebook.publish().
+		then(() => {
+			ebook.download();
+		}).
+		then(() => {
+			console.log('Success!');
+			setOutput("feedback", "ok");
+		})
+		.catch(error => {
+			setOutput("feedback", `Error: ${error}`);
 	});
 } catch (error) {
 	setFailed(error.message);
