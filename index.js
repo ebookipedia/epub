@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const epub = require('epub-press-js@0.5.3');
+const epub = require('epub-press-js');
 
 try {
 	const url = core.getInput('url'); //kk
