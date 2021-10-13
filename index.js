@@ -11,20 +11,17 @@ try {
 	const ebook = new EpubPress({
 		title: title,
 		description: 'eBook-friendly version',
-		urls: [
-			url
-		]
+		urls: [url]
 	});
 	ebook.publish().
 		then(() => {
 			ebook.download();
 		}).
 		then(() => {
-			console.log('Success!');
-			setOutput("feedback", "ok");
+			setOutput("id", book.getId());
 		})
 		.catch(error => {
-			setOutput("feedback", `Error: ${error}`);
+			setFailed(error);
 	});
 } catch (error) {
 	setFailed(error.message);
