@@ -1,17 +1,18 @@
 {
-  "name": "build",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.0",
-    "epub-press-js": "^0.5.3"
-  }
+	"type": "module",
+	"name": "build",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@actions/core": "^1.6.0",
+		"@actions/github": "^5.0.0",
+		"epub-press-js": "^0.5.3"
+	}
 }

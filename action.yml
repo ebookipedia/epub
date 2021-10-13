@@ -12,4 +12,4 @@ outputs:
     description: 'Text indicating if the epub was correctly downloaded (ok) or not (error description)'
 runs:
   using: 'node12'
-  main: 'index.mjs'
+  main: 'index.js --experimental-modules'
