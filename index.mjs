@@ -18,11 +18,12 @@ try {
 			ebook.download();
 		}).
 		then(() => {
-			setOutput("id", book.getId());
+			setOutput("id", ebook.getId());
 		})
 		.catch(error => {
 			setFailed(error);
-	});
+		}
+	);
 } catch (error) {
 	setFailed(error.message);
 }
