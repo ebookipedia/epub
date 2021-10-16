@@ -3,13 +3,9 @@ const github = require('@actions/github');
 const EpubPress = require('epub-press-js');
 
 try {
-	const url = core.getInput('url'); //kk
-	console.log("url: " + url)
-	//console.log(JSON.stringify(github.context.payload.head_commit.repository.description))
-	console.log(JSON.stringify(core))
-	/*
-	const url = core.getInput('url'); //kk
-	const title = core.getInput('title'); //kk
+	const url = core.getInput('url');
+	title = url.substring(url.indexOf("/wiki/"))
+	console.log(title)
 	const ebook = new EpubPress({
 	    title: title,
 	    description: 'An eBook-friendly mirror of a Wikipedia article',
