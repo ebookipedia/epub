@@ -1,12 +1,12 @@
 name: 'html2epub'
-description: 'Converts HTML content to epub'
+description: 'Generates an epub from a Wikipedia link'
 inputs:
   url:
     description: 'URL of the HTML content to be converted'
-    required: true
+    required: false
   title:
     description: 'Title of the generated book && name of the download file (that will be have the epub extension)'
-    required: true
+    required: false
 runs:
   using: 'node12'
   main: 'main.js'
