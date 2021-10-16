@@ -10,10 +10,10 @@ try {
 	    urls: [url]
 	});
 	ebook.publish().
-		then(() => 
-			ebook.download()).
-		catch(error => 
-			core.setFailed(error)
+          then(() => 
+	    ebook.download()).
+          catch(error => 
+            core.setFailed(error)
 	);
 } catch (error) {
 	core.setFailed(error.message);
