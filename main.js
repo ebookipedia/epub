@@ -6,7 +6,6 @@ try {
 	const url = core.getInput('url');
 	title = decodeURIComponent(url.substring(url.indexOf("/wiki/")).substring(6))
 	console.log(title)
-	/*
 	const ebook = new EpubPress({
 	    title: title,
 	    description: 'An eBook-friendly mirror of a Wikipedia article',
@@ -18,7 +17,6 @@ try {
           catch(error => 
             core.setFailed(error)
 	);
-	*/
 } catch (error) {
 	core.setFailed(error.message);
 }
