@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const core = require('@actions/github');
+const github = require('@actions/github');
 const EpubPress = require('epub-press-js');
 
 try {
