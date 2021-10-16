@@ -8,7 +8,7 @@ try {
 	console.log(title)
 	const ebook = new EpubPress({
 	    title: title,
-	    description: 'An eBook-friendly mirror of a Wikipedia article',
+	    description: 'Wikipedia',
 	    urls: [url]
 	});
 	ebook.publish().
