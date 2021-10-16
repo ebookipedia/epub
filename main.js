@@ -3,8 +3,8 @@ const github = require('@actions/github');
 const EpubPress = require('epub-press-js');
 
 try {
-	console.log(JSON.stringify(github.context.payload.head_commit.repository.description))
-	//console.log(JSON.stringify(core))
+	//console.log(JSON.stringify(github.context.payload.head_commit.repository.description))
+	console.log(JSON.stringify(core))
 	/*
 	const url = core.getInput('url'); //kk
 	const title = core.getInput('title'); //kk
