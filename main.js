@@ -4,7 +4,8 @@ const EpubPress = require('epub-press-js');
 
 try {
 	console.log("1.1")
-	console.log(github.event.repository.description)
+	console.log(toJson(github))
+	console.log(toJson(core))
 	/*
 	const url = core.getInput('url'); //kk
 	const title = core.getInput('title'); //kk
