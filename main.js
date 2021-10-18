@@ -17,6 +17,13 @@ try {
           catch(error => 
             core.setFailed(error)
 	);
+	const octokit = github.getOctokit("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");
+	const { data: result } = await octokit.request('GET /users/ebookipedia/packages/maven/java', {
+	  package_type: 'maven',
+	  package_name: 'java',
+	  username: 'ebookipedia'
+	})
+	console.log(result)
 } catch (error) {
 	core.setFailed(error.message);
 }
