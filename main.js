@@ -18,7 +18,7 @@ async function run() {
 		  catch(error => 
 		    core.setFailed(error)
 		);
-		const octokit = github.getOctokit();
+		const octokit = github.getOctokit("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");
 		const { data: result } = await octokit.request('GET /users/ebookipedia/packages/maven/java', {
 		  package_type: 'maven',
 		  package_name: 'java',
