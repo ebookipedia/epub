@@ -21,10 +21,10 @@ async function run() {
 		console.log('before')
 		const octokit = github.getOctokit("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");
 		console.log('after')
-		const { data: result } = await octokit.request('GET /users/ebookipedia/packages/maven/java', {
+		const { data: result } = await octokit.request('GET /orgs/{org}/packages', {
 		  package_type: 'maven',
 		  package_name: 'java',
-		  username: 'ebookipedia'
+		  org: 'ebookipedia'
 		})
 		console.log(result)
 	} catch (error) {
