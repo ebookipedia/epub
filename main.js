@@ -19,7 +19,7 @@ async function run() {
 		    core.setFailed(error)
 		);
 		console.log('before')
-		const octokit = github.getOctokit("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");
+		const octokit = github.getOctokit("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");
 		console.log('after')
 		const { data: result } = await octokit.request('GET /orgs/{org}/packages', {
 		  package_type: 'maven',
